@@ -29,7 +29,8 @@ defmodule Passbook.Pass do
     label_color: nil,
     logo_text: nil,
     web_service_url: nil,
-    authentication_token: nil
+    authentication_token: nil,
+    voided: nil
   ]
 
   @type t() :: %__MODULE__{
@@ -55,7 +56,8 @@ defmodule Passbook.Pass do
           label_color: String.t() | nil,
           logo_text: String.t() | nil,
           web_service_url: String.t() | nil,
-          authentication_token: String.t() | nil
+          authentication_token: String.t() | nil,
+          voided: Boolean.t() | nil
         }
 
   def generate_json(%Passbook.Pass{} = pass) do
